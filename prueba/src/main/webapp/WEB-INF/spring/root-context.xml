@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<bean id="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+		<property name="username" value="grupo"></property>
+		<property name="password" value="hola"></property>
+	</bean>
+
+	<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds"></property>
+	</bean>
+
+	<bean id="daocapacitacion" class="cl.awakelab.prueba.model.DAO.CapacitacionDAOImpl">
+		<property name="template" ref="jt"></property>
+	</bean>
+	
+	<bean id="daousuario" class="cl.awakelab.prueba.model.DAO.UsuarioDAOImpl">
+		<property name="template" ref="jt"></property>
+	</bean>
+	
+	<bean id="daopago" class="cl.awakelab.prueba.model.DAO.PagoDAOImpl">
+		<property name="template" ref="jt"></property>
+	</bean>
+	
+	<bean id="daovisita" class="cl.awakelab.prueba.model.DAO.VisitaDAOImpl">
+		<property name="template" ref="jt"></property>
+	</bean>
+	
+	<bean id="daoclien" class="cl.awakelab.prueba.model.DAO.ClienteDAOImpl">
+		<property name="template" ref="jt"></property>
+	</bean>
+	<bean id="daoadmin" class="cl.awakelab.prueba.model.DAO.AdministrativoDAOImpl">
+		<property name="template" ref="jt"></property>
+	</bean>
+	<bean id="daoprof" class="cl.awakelab.prueba.model.DAO.ProfesionalDAOImpl">
+		<property name="template" ref="jt"></property>
+	</bean>
+		
+
+</beans>

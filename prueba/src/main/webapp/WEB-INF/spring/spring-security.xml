@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bean:beans
+	xmlns:bean="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http auto-config="true">
+		<intercept-url pattern="/" access="hasAnyAuthority('CLIENTE','PROFESIONAL','ADMIN')" />
+		<intercept-url pattern="/listarCapacitacion" access="hasAnyAuthority('CLIENTE')" />
+		<intercept-url pattern="/crearCapacitacion" access="hasAnyAuthority('CLIENTE')" />
+		<intercept-url pattern="/contacto" access="hasAnyAuthority('CLIENTE')" />
+		<intercept-url pattern="/listaUsuario" access="hasAnyAuthority('ADMIN')" />
+		<intercept-url pattern="/crarUsuario" access="hasAnyAuthority('ADMIN')" />
+		<intercept-url pattern="/crarPago" access="hasAnyAuthority('ADMIN')" />
+		<intercept-url pattern="/listarPago" access="hasAnyAuthority('ADMIN')" />
+		<intercept-url pattern="/listarVisita" access="hasAnyAuthority('PROFESIONAL')" />
+		
+		
+		
+	<!--  	<form-login login-page="/home"
+			authentication-failure-url="/error" 
+			username-parameter="runusuario"
+			password-parameter="password" />
+		<csrf disabled="true" />
+		<logout logout-success-url="/home" />
+		-->
+
+	</http>
+
+
+ <!--        <authentication-manager> 
+			<authentication-provider> 
+				<password-encoder hash="bcrypt"/> 
+				<user-service> 
+					<user name="admin" authorities="admin" password="$2a$10$RZNvgcZUYN1R.0Vdj6/o8enUJ5HLGpMj8ioYEK75hqSArRPUoRJOy" />
+				 </user-service> 
+		    </authentication-provider> 
+	   </authentication-manager> -->
+
+         <authentication-manager>
+		<authentication-provider>
+			<password-encoder hash="bcrypt" />
+			<jdbc-user-service data-source-ref="ds"
+				users-by-username-query="SELECT runusuario as username, password as password, 1 as enabled FROM usuario WHERE runusuario = ?"
+				authorities-by-username-query="SELECT runusuario, (CASE tipousuario WHEN 1 THEN 'CLIENTE' WHEN 2 THEN 'PROFESIONAL' WHEN 3 THEN 'ADMIN' ELSE 'OTHER' END) as authority FROM usuario WHERE runusuario = ?"
+			/>
+		</authentication-provider>
+	</authentication-manager> 
+
+</bean:beans>

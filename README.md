@@ -3,8 +3,8 @@
 Proyecto final del Bootcamp Full Stack Java inpartido por la OTEC Awakelab. se solicitaba una sitio dinamico con conexion a base de datos para una empresa ficticia de prevencion de riesgo
 -
 -
-Patron de diseño MVC
-Programacion Orientada aObjeto
+- Patron de diseño MVC
+- Programacion Orientada aObjeto
 
 ## Tecnologia Utilizada 🛠️
 - Java
@@ -20,7 +20,6 @@ Programacion Orientada aObjeto
 
 
 ## Autor ✒️
-- Daniel Navarrete
 - Esteban Gonzalez
  github (t3b1)
 

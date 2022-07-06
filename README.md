@@ -1,8 +1,10 @@
 # Evaluacion-final
 
 Proyecto final del Bootcamp Full Stack Java inpartido por la OTEC Awakelab. se solicitaba una sitio dinamico con conexion a base de datos para una empresa ficticia de prevencion de riesgo
--
--
+
+
+
+- UML
 - Patron de diseño MVC
 - Programacion Orientada aObjeto
 

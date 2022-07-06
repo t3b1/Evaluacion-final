@@ -1,11 +1,28 @@
 # Evaluacion-final
 
-Proyecto Realizado en lenguaje java con spring  framework
-se solicitaba una sitio dinamico con conexion a base de datos  el cual cree de la siguiente manera
-base de datos oracle  
-conexion jdbc template
-patron de diseño mvc
-diseño de la pagina
-bootstrap
-html 
-css
+Proyecto final del Bootcamp Full Stack Java inpartido por la OTEC Awakelab. se solicitaba una sitio dinamico con conexion a base de datos para una empresa ficticia de prevencion de riesgo
+-
+-
+Patron de diseño MVC
+Programacion Orientada aObjeto
+
+## Tecnologia Utilizada 🛠️
+- Java
+- html
+- css
+- bootstrap
+- javaScript
+- SQL
+- BD Oracle
+- Spring Framework
+- Spring Tool
+- JDBC
+
+
+## Autor ✒️
+- Daniel Navarrete
+- Esteban Gonzalez
+ github (t3b1)
+
+### Proceso 🔧
+- terminado 
